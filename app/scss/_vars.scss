@@ -1,4 +1,38 @@
+%rb-400{
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+}
 
+%rb-500{
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+}
+
+%dms-400{
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+}
+
+%dms-500{
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+}
+
+%ml-400{
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+}
+%ml-600{
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+}
+%ml-700{
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+}
+
+$main-color: #8499B7; 
+$prm-color: #555555;
 
 @function max($numbers...) {
 @return m#{a}x(#{$numbers});

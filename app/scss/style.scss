@@ -4,6 +4,173 @@
 @import 'libs';
 @import 'global';
 
+.header {}
+
+.header-top {
+  background-color: $main-color;
+
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px;
+    @extend %rb-400;
+    color: #fff;
+    font-size: 16px;
+    line-height: 18.96px;
+  }
+
+  &__greeting {}
+
+  &__form {}
+
+  &__select {}
+
+  .jq-selectbox__select {
+    background: linear-gradient(#8499B7, #8499B7);
+    border: 1px solid $main-color;
+    box-shadow: none;
+    text-shadow: none;
+    color: #fff;
+    @extend %rb-400;
+    font-size: 16px;
+    padding: 0 28px;
+
+    &:active {}
+  }
+
+  .jq-selectbox.focused .jq-selectbox__select {
+    border: 1px solid $main-color;
+  }
+
+  .jq-selectbox__trigger {
+    width: 28px;
+    border-left: none;
+
+  }
+
+  .jq-selectbox__trigger-arrow {
+    border-top: none;
+
+    &::before {
+      content: '';
+      background: url('../images/icon/select-headertop.svg') 0 0 no-repeat;
+      position: absolute;
+      top: -3px;
+      left: -4px;
+      width: 12px;
+      height: 8px;
+    }
+  }
+
+  .jq-selectbox .placeholder {
+    color: #fff;
+  }
+
+  .jq-selectbox__dropdown {
+    background-color: $main-color;
+    @extend %rb-400;
+    font-size: 16px;
+  }
+
+  .jq-selectbox li {
+    background-color: $main-color;
+  }
+
+  .jq-selectbox li.selected {
+    background-color: $main-color;
+
+  }
+
+  .jq-selectbox li:hover {
+
+    color: #fff;
+  }
+
+
+  &__sign {
+    @extend %rb-400;
+    color: #fff;
+    font-size: 16px;
+    line-height: 18.96px;
+    position: relative;
+    margin-left: 12px;
+    padding-left: 22px;
+
+    &::before {
+      content: '';
+      background: #fff;
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 2.2px;
+      height: 17px;
+    }
+  }
+}
+
+.header-bottom {
+
+  &__inner {}
+
+  &__form {}
+
+  &__input {}
+
+  &__select {}
+
+  &__option {}
+
+  &__btn {}
+
+  &__search {}
+
+  &__nav {}
+
+  &__nav-list {}
+
+  &__nav-link {}
+
+
+}
+
+.logo {
+
+  &__link {}
+
+  &__img {}
+}
+
+.icon {}
+
+.ic1 {}
+
+.header-bar {
+
+  &__inner {}
+
+  &__form {}
+
+  &__select {}
+
+  &__option {}
+}
+
+.menu {
+
+  &__btn {
+    display: none;
+  }
+
+  &__list {}
+
+  &__list-item {}
+
+  &__list-link {}
+
+  &__list-link--active {}
+}
 
 
 @import 'media';

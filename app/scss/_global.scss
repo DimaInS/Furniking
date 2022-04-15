@@ -14,9 +14,17 @@ body{
 }
 
 .container{
-  max-width: 1800px;
+  max-width: 1196px;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+.title{
+  @extend %ml-700;
+  font-size: 36px;
+  line-height: 45.18px;
+  color: $prm-color;
+  text-align: center;
 }
 
 
