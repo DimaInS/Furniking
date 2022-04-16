@@ -112,23 +112,134 @@
 
 .header-bottom {
 
-  &__inner {}
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 92px;
+  }
 
-  &__form {}
+  &__form {
+    display: flex;
+    // border: 2px solid $main-color;
+    
+    max-width: 582px;
+    height: 46px;
+  }
 
-  &__input {}
+  &__input {
+    border: 2px solid $main-color;
+    border-radius: 8px;
+    border-right: none;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    padding: 15px 10px 14px 25px;
+    @extend %rb-400;
+    font-size: 14px;
+    line-height: 16.59px;
+    color: #b0b0b0;
+    outline: none;
+  }
+  .jq-selectbox__select{
+    height: 46px;
+    width: 123px;
+    background: linear-gradient(#fff, #fff);
+    box-shadow: none;
+    border: 2px solid $main-color;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    @extend %rb-400;
+    font-size: 14px;
+    color: $prm-color;
+    padding: 4px 1px 14px 10px;
+    &::before {
+      content: '';
+      background: #E3E3E3C7;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1.5px;
+      height: 42px;
+    }
+  }
 
+  .jq-selectbox.focused .jq-selectbox__select {
+    border: 2px solid $main-color;
+    border-left: none;
+    border-right: none;
+  }
+
+  .jq-selectbox__trigger {
+    width: 47.34px;
+    border-left: none;
+    
+  }
+ .jq-selectbox__dropdown {
+    
+    @extend %rb-400;
+    font-size: 14px;
+  }
+  .jq-selectbox__trigger-arrow {
+    border-top: none;
+    &::before {
+      content: '';
+      background: url('../images/icon/select-headerbottom.svg') 0 0 no-repeat;
+      position: absolute;
+      top: 4px;
+      left: -10px;
+      width: 8.76px;
+      height: 7.71px;
+    }
+  } 
+  .jq-selectbox li {
+    background-color: #fff;
+    color: $prm-color;
+  }
+
+  .jq-selectbox li.selected {
+    color: $prm-color;
+
+  }
+
+  .jq-selectbox li:hover {
+    background-color: $main-color;
+    color: #fff;
+  }
+ 
+
+    
+  
   &__select {}
 
   &__option {}
 
-  &__btn {}
+  &__btn {
+    border: 2px solid $main-color;
+    border-radius: 0px 7px 6px 0px;
+    border-left: none;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    background-color: $main-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 46px;
+    cursor: pointer;
+  }
 
   &__search {}
 
   &__nav {}
 
-  &__nav-list {}
+  &__nav-list {
+    display: flex;
+  }
+
+  .header-bottom__nav-item+.header-bottom__nav-item {
+    margin-left: 21px;
+  }
 
   &__nav-link {}
 
