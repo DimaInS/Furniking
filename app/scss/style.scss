@@ -121,8 +121,8 @@
 
   &__form {
     display: flex;
-    // border: 2px solid $main-color;
-    
+    margin-left: 120px;
+    margin-right: auto;
     max-width: 582px;
     height: 46px;
   }
@@ -207,13 +207,6 @@
     color: #fff;
   }
  
-
-    
-  
-  &__select {}
-
-  &__option {}
-
   &__btn {
     border: 2px solid $main-color;
     border-radius: 0px 7px 6px 0px;
@@ -229,9 +222,6 @@
     cursor: pointer;
   }
 
-  &__search {}
-
-  &__nav {}
 
   &__nav-list {
     display: flex;
@@ -241,9 +231,40 @@
     margin-left: 21px;
   }
 
-  &__nav-link {}
+  &__nav-link--shop {
+    position: relative;
+    span{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: -16px;
+      right: -5px;
+      @extend %rb-400;
+      font-size: 7px;
+      line-height: 8.3px;
+      color: #fff;
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: $main-color;
 
+    }
+    
+  }
 
+  use.ic1{
+      transition: all 0.5s;
+      fill: $prm-color;
+      stroke: $prm-color;
+  }
+  .header-bottom__nav-link{
+
+      &:hover use.ic1{
+      fill: $main-color;
+        stroke: $main-color;
+    }
+  }
 }
 
 .logo {
@@ -258,11 +279,88 @@
 .ic1 {}
 
 .header-bar {
+  background: #F7F8FA;
 
-  &__inner {}
+  &__inner {
+    min-height: 67px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
 
-  &__form {}
+  &__form {
+    margin-right: 82px;
+  }
 
+  .jq-selectbox__select{
+   width: 260px;
+   height: 67px;
+    background: linear-gradient(#8499B7, #8499B7);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    text-shadow: none;
+    color: #fff;
+    @extend %rb-500;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 18px 10px 10px 74px;
+  }
+
+  .jq-selectbox.focused .jq-selectbox__select {
+    border: 1px solid $main-color;
+  }
+
+   .jq-selectbox__trigger {
+    width: 64px;
+    border-left: none;
+    left: 0;
+  }
+
+  .jq-selectbox__trigger-arrow {
+    border-top: none;
+
+    &::before {
+      content: '';
+      background: url('../images/icon/select-menu.svg') 0 0 no-repeat;
+      position: absolute;
+      top: 12px;
+      left: -10px;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .jq-selectbox__dropdown{
+    margin-top: -1px;
+
+    background: #F7F8FA;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+  }
+
+  .jq-selectbox li {
+    @extend %rb-400;
+    font-size: 14px;
+    line-height: 16.59px;
+    color: $prm-color;
+    letter-spacing: 0.02em;
+    padding: 10px 28px;
+ 
+    background: #F7F8FA;
+    border-top: 0.8px solid #e3e3e3;
+    
+    &:first-child{
+      border-top: none;
+    }
+    &:hover{
+      background-color: $main-color;
+       color: #fff;
+    }
+  }
+  
   &__select {}
 
   &__option {}
@@ -274,13 +372,30 @@
     display: none;
   }
 
-  &__list {}
+  &__list {
+    display: flex;
+  }
 
   &__list-item {}
 
-  &__list-link {}
+  .menu__list-item+.menu__list-item{
+    margin-left: 65px;
+  }
 
-  &__list-link--active {}
+  &__list-link {
+    @extend %rb-400;
+    font-size: 14px;
+    line-height: 16.59px;
+    color: $prm-color;
+    transition: all .5s;
+    &:hover{
+      color: $main-color
+    }
+  }
+
+  &__list-link--active {
+    color: $main-color
+  }
 }
 
 
