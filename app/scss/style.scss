@@ -675,10 +675,14 @@
       font-size: 24px;
       line-height: 30.12px;
       color: #c2c2c2;
+      transition: all .4s;
       cursor: pointer;
       &--active{
         color: $main-color;
 
+      }
+      &:hover{
+        color: #8894a5;
       }
 		}
     .trending__btn+.trending__btn{
@@ -686,10 +690,14 @@
     }
 
 		&__gallery {
-      display: grid;
+     
+		}
+
+    &__gallery-item{
+       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 30px;
-		}
+    }
 
 		&__item {
       max-width: 270px;
@@ -843,15 +851,45 @@
       line-height: 120%;
 		}
 
-		
+		.slick-dots{
+      display: flex;
+      justify-content: center;
+      margin-top: 55px;
+      li{
+        margin-left: 14px;
+        button{
+          background-color: transparent;
+          font-size: 0;
+          padding: 0;
+          border: 4px solid #cccccc;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          
+          transition: all .4s;
+          position: relative;
+          &::before{
+            content: '';
+            background: #cccccc;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;          
+          }
+        }
+        &.slick-active {
+        button{
+          border: 4px solid $main-color;
+           
+          &::before{
+            background-color: $main-color
+          }
+        }
+      }
+    }
 }
-
-.icon1 {
-}
-
-.icon {
-}
-.star {
 }
 
 
