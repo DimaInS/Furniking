@@ -1,11 +1,14 @@
 $(function() {
-       var mixer = mixitup('.trending__inner');
+       $('.products__btn').on('click', function() {
+      $('.products__btn').removeClass('products__btn--active')
+      $(this).addClass('products__btn--active')
+    });
        
 
-      $('.trending__gallery').slick({
+      $('.trending__galler').slick({
            arrows: false,
           dots: true,
-          adaptiveHeight: true
+          variableWidth: true
     
       });
 
@@ -38,18 +41,71 @@ $(function() {
   $('.header-top__select').styler();
   $('.header-bottom__select').styler();
 
+  //timer1
+  function getTimeRemaining(endtime) {
+  const total = Date.parse(endtime) - Date.parse(new Date());
+  const seconds = Math.floor((total / 1000) % 60);
+  const minutes = Math.floor((total / 1000 / 60) % 60);
+  const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+  const days = Math.floor(total / (1000 * 60 * 60 * 24));
+  
+  return {
+    total,
+    days,
+    hours,
+    minutes,
+    seconds
+  };
+}
 
-//  var containerEl1 = document.querySelector('[data-ref="container-1"]');
-//   var containerEl2 = document.querySelector('[data-ref="container-2"]');
+function initializeClock(id, endtime) {
+  const clock = document.getElementById(id);
+  
+  const daysSpan = clock.querySelector('.special__clock-days');
+  const hoursSpan = clock.querySelector('.special__clock-hours');
+  const minutesSpan = clock.querySelector('.special__clock-minutes');
+  const secondsSpan = clock.querySelector('.special__clock-seconds');
+
+  function updateClock() {
+    const t = getTimeRemaining(endtime);
+
+    daysSpan.innerHTML = t.days;
+    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
+  }
+
+  updateClock();
+  const timeinterval = setInterval(updateClock, 1000);
+}
+
+
+const line = $('.timer').attr('data-time');
+const deadline = $('.timer2').attr('data-time');
+
+initializeClock('first', line);
+initializeClock('countdown', deadline);
+
+
+
+
+// для нескольких галлерей ( тут 2-Х)
+
+ var containerEl1 = document.querySelector('[data-ref="container-1"]');
+  var containerEl2 = document.querySelector('[data-ref="container-2"]');
  
-//   var config = {
-//     controls: {
-//       scope: 'local'
-//     }
-//   };
+  var config = {
+    controls: {
+      scope: 'local'
+    }
+  };
  
 
 
-//  var mixer1 = mixitup(containerEl1, config);
-// var mixer2 = mixitup(containerEl2, config);    
+ var mixer1 = mixitup(containerEl1, config);
+var mixer2 = mixitup(containerEl2, config);    
 });
