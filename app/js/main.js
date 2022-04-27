@@ -1,11 +1,18 @@
+ 
+
 $(function() {
-       $('.products__btn').on('click', function() {
-      $('.products__btn').removeClass('products__btn--active')
-      $(this).addClass('products__btn--active')
+    
+
+    new Swiper('.reviews__swiper',{
+      loop: true,
+        navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
     });
        
 
-      $('.trending__galler').slick({
+      $('.trending__gallery').slick({
            arrows: false,
           dots: true,
           variableWidth: true
@@ -19,7 +26,10 @@ $(function() {
       $(this).addClass('trending__btn--active')
     });
 
-    
+     $('.products__btn').on('click', function() {
+      $('.products__btn').removeClass('products__btn--active')
+      $(this).addClass('products__btn--active')
+    });
 
     $(".star").rateYo({
       readOnly: true,

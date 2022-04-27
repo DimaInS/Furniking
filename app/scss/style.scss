@@ -1064,32 +1064,98 @@
     background-color: #FF6868;
   }
 
-  &__img {}
-
-  &__hover {}
-
-  &__hover-box {}
-
-  &__favorite {}
-
-  &__shop {}
-
-  &__refresh {}
-
-  &__view {}
-
-  &__content {}
-
-  &__position {}
-
-  &__content-box {}
-
-  &__prices {}
-
-  &__hew-price {}
-
-  &__old-price {}
+ 
 }
+
+.reviews {
+    padding-top: 120px;
+    padding-bottom: 20px;
+		&__main-title {
+      margin-bottom: 90px;
+		}
+
+		&__swiper {
+		}
+
+    &__item{
+        position: relative;
+        max-width: 816px;
+        min-height: 312px;
+        background: #F8FAFB;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        text-align: center;
+        letter-spacing: 0.005em;
+        margin: 44px 94px 0;
+    }
+
+		&__img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+		}
+
+		&__text {
+      padding-top: 80px;
+      margin: 0 auto 56px;
+      max-width: 566px;
+      text-align: center;
+      @extend %dm-400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #515151;
+    }
+
+		&__name {
+      @extend %ml-600;
+      color: $prm-color;
+      font-size: 24px;
+      line-height: 28.8px;
+       margin-bottom: 8px;
+		}
+
+		&__position {
+      margin-bottom: 47px;
+      @extend %rb-400;
+      font-size: 16px;
+      line-height: 20px;
+      color: #515151;
+		}
+}
+
+.swiper {
+  max-width: 1004px;
+  height: 356px;
+		&__wrapper {
+		}
+}
+.swiper-slide {
+
+  margin: 0 auto;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  top: 60%;
+}
+ .swiper-button-prev{
+   left: 0;
+ }
+
+ .swiper-button-next{
+   right: 0;
+ }
+
+.swiper-button-prev::after{
+color: transparent;
+  background: url('../images/icon/arrow-prev.svg') 50% 50%/cover no-repeat;
+}
+
+.swiper-button-next::after{
+   color: transparent;
+    background: url('../images/icon/arrow-next.svg') 50% 50%/cover no-repeat;
+} 
+
 
 
 
