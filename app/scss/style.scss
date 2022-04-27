@@ -1069,7 +1069,7 @@
 
 .reviews {
     padding-top: 120px;
-    padding-bottom: 20px;
+    
 		&__main-title {
       margin-bottom: 90px;
 		}
@@ -1156,6 +1156,93 @@ color: transparent;
     background: url('../images/icon/arrow-next.svg') 50% 50%/cover no-repeat;
 } 
 
+
+.articles {
+  padding-top: 115px;
+
+
+		&__inner {
+		}
+
+		&__main-title {
+      margin-bottom: 56px;
+		}
+
+		&__items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 22px 26.5px;
+		}
+
+		&__item {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 0 0;
+      width: 569.75px;
+      height: 455.28px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      padding-left: 44px;
+      color: #fff;
+		}
+
+		&__info {
+      display: flex;
+      margin-bottom: 21px;
+       margin-top: 252px;
+		}
+
+		&__lable {
+     
+      margin-right: 10px;
+      width: 100px;
+      height: 24px;
+      border-radius: 3px;
+      background-color: #f8fafb;
+      color: $main-color;
+      display: flex;
+      
+      align-items: center;
+      position: relative;
+      padding-left: 30px;
+      &::before{
+        content: '';
+        background: url('../images/icon/tag.svg') 0 0 no-repeat;
+        position: absolute;
+        top: 7px;
+        left: 10px;
+        width: 13.15px;
+        height: 13.3px;
+      }
+		}
+
+		&__data {
+      @extend %ml-400;
+      font-size: 14px;
+      line-height: 18.2px;
+      letter-spacing: 0.008em;
+      
+		}
+
+		&__title {
+      @extend %ml-700;
+      font-size: 39px;
+      line-height: 46.8px;
+      letter-spacing: 0.005em;
+      margin-bottom: auto;
+		}
+
+		&__link {
+      margin-bottom: 30.4px;
+      @extend %ml-600;
+      font-size: 14px;
+      line-height: 18.2px;
+      letter-spacing: 0.008em;
+      color: #fff;
+
+		}
+}
 
 
 
