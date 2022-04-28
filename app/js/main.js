@@ -15,7 +15,7 @@ $(function() {
       $('.trending__gallery').slick({
            arrows: false,
           dots: true,
-          variableWidth: true
+         
     
       });
 
