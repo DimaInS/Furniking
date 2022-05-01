@@ -2158,6 +2158,68 @@
         </div>
       </div>
     </section>
+
+    <section class="contact">
+      <div class="form">
+        <form class="form__body" id="form" action="#">
+          <h1 class="form__title title">
+            Відправка на пошту
+          </h1>
+          <div class="form__item">
+            <label class="form__label" for="formName">
+              Ім'я*
+            </label>
+            <input id="forName" class="form__input" type="text" name="name">
+          </div>
+          <div class="form__item">
+            <label class="form__label" for="forEmail">
+              E-mail*
+            </label>
+            <input id="forEmail" class="form__input" type="text" name="email">
+          </div>
+          <div class="form__item">
+            <div class="form__label">Правша чи Левша</div>
+            <div class="options">
+              <div class="options__item">
+                <input class="options__input" id="formRightHand" type="radio" checked value="right" name="hand">
+                <label class="options__label" for="formRightHand"><span>Правша</span></label>
+              </div>
+              <div class="options__item">
+                <input class="options__input" id="formLeftHand" type="radio" value="left" name="hand">
+                <label class="options__label" for="formLeftHand"><span>Левша</span></label>
+              </div>
+            </div>
+          </div>
+          <div class="form__item">
+            <div class="form__label">Вік</div>
+            <select class="select" name="age">
+              <option value="від 18 до 25">Молодий</option>
+              <option value="від 25 до 45">Старий</option>
+              <option value="от 45">Супер Стар</option>
+
+            </select>
+          </div>
+          <div class="form__item">
+            <div class="form__label">Додати фото</div>
+            <div class="file"></div>
+            <div class="file__item">
+              <input class="file__input" id="formImage" accept=".jpg, .png, gif" type="file" name="image">
+              <div class="file__button">Обрати</div>
+            </div>
+            <div class="file__preview"></div>
+          </div> 
+          <div class="form__item">
+            <div class="checkbox">
+              <input class="checkbox__input" id="agreement" type="checkbox" name="agreement" checked>
+              <label class="checkbox__label" for="agreement"><span>Надаю свою згоду на обробку персональних відомостей
+                  згідно з <a href="#">Умовами</a></span> </label>
+            </div>
+          </div> 
+          <button class="form__button" type="submit">Відправити</button>
+        </form>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -2334,6 +2396,7 @@
       </div>
     </div>
 
+    
   </footer>
 
 
