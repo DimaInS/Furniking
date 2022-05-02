@@ -2169,13 +2169,13 @@
             <label class="form__label" for="formName">
               Ім'я*
             </label>
-            <input id="forName" class="form__input" type="text" name="name">
+            <input id="formName" class="form__input _req" type="text" name="name">
           </div>
           <div class="form__item">
             <label class="form__label" for="forEmail">
               E-mail*
             </label>
-            <input id="forEmail" class="form__input" type="text" name="email">
+            <input id="formEmail" class="form__input _req _email" type="text" name="email">
           </div>
           <div class="form__item">
             <div class="form__label">Правша чи Левша</div>
@@ -2189,6 +2189,10 @@
                 <label class="options__label" for="formLeftHand"><span>Левша</span></label>
               </div>
             </div>
+          </div>
+          <div class="form__item">
+            <label class="form__label" for="formMessage">Повідомлення</label>
+            <textarea class="form__input" id="formMessage"></textarea>
           </div>
           <div class="form__item">
             <div class="form__label">Вік</div>
@@ -2210,7 +2214,7 @@
           </div> 
           <div class="form__item">
             <div class="checkbox">
-              <input class="checkbox__input" id="agreement" type="checkbox" name="agreement" checked>
+              <input class="checkbox__input _req" id="agreement" type="checkbox" name="agreement" checked>
               <label class="checkbox__label" for="agreement"><span>Надаю свою згоду на обробку персональних відомостей
                   згідно з <a href="#">Умовами</a></span> </label>
             </div>

@@ -1355,6 +1355,9 @@ color: transparent;
   margin: 0 auto;
   color: $prm-color;
   padding: 30px 0;
+  & *{
+    outline: none;
+  }
 
 		&__body {
 		}
@@ -1370,16 +1373,25 @@ color: transparent;
 		&__label {
       display: block;
       font-size: 18px;
+      @extend %rb-400;
       margin-bottom: 10px;
 		}
 
 		&__input {
       height: 50px;
       padding: 0 20px;
+      border: 2px solid $main-color;
       border-radius: 5px;
       width: 100%;
       font-size: 18px;
+      
 		}
+
+    
+
+    &__input:focus{
+      box-shadow: 0 0 15px $main-color;
+    }
 
     textarea.form__input{
       min-height: 120px;
@@ -1391,15 +1403,45 @@ color: transparent;
 		}
 
 		&__button {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50px;
+      background-color: $main-color;
+      color: #fff;
+      font-size: 18px;
+      @extend %rb-500;
+      border: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 5px;
+      box-shadow: 0 6px 0 rgba(150, 150, 150, .6);
+      position: relative;
+      top: 0;
+      transition: all 0.3s;
+      &:hover{
+        background-color: #576b86;
+      }
+      &:active{
+        top: 3px;
+        box-shadow: 0 2px 0 rgba(150, 150, 150, .6);
+      }
 		}
 }
+.form__input._error{
+       box-shadow: 0 0 15px red;
+    }
+
 .options {
 
 		&__item {
+      
 		}
 
 		&__input {
       display: none;
+      
 		}
     .options__input:checked + .options__label::after{
       transform: scale(1);
@@ -1411,6 +1453,8 @@ color: transparent;
       line-height: 140%;
       align-items: center;
       position: relative;
+      
+      cursor: pointer;
       &::before{
         content: '';
         background: rgba(132,153,183,.29);
@@ -1435,31 +1479,147 @@ color: transparent;
 		}
 }
 .select {
+  .jq-selectbox__select {
+    display: block;
+    height: 50px;
+    width: 555px;
+    background: linear-gradient(#fff, #fff);
+    box-shadow: none;
+    border: 2px solid $main-color;
+    border-radius: 5px;
+    @extend %rb-400;
+    font-size: 16px;
+    color: $prm-color;
+    padding: 4px 1px 14px 10px;
+
+    
+  }
+
+  .jq-selectbox.focused .jq-selectbox__select {
+    border: 2px solid $main-color;
+    
+    
+  }
+
+  .jq-selectbox__trigger {
+    width: 47.34px;
+    border-left: none;
+
+  }
+
+  .jq-selectbox__dropdown {
+
+    @extend %rb-400;
+    font-size: 16px;
+  }
+
+  .jq-selectbox__trigger-arrow {
+    border-top: none;
+
+    &::before {
+      content: '';
+      background: url('../images/icon/select-headerbottom.svg') 0 0 no-repeat;
+      position: absolute;
+      top: 4px;
+      left: -10px;
+      width: 8.76px;
+      height: 7.71px;
+    }
+  }
+
+
 }
+.select.jq-selectbox li:hover {
+    background-color: $main-color;
+    color: #fff;
+  }
+
+   .select.jq-selectbox li.selected {
+    background-color: $main-color;
+    color: #fff;
+  }
+
 .file {
 
 		&__item {
+      position: relative;
 		}
 
 		&__input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      font-size: 0;
+      cursor: pointer;
 		}
 
 		&__button {
+      display: inline-flex;
+      min-height: 35px;
+      border-radius: 5px;
+      justify-content: center;
+      align-items: center;
+      background-color: $main-color;
+      padding: 0 40px;
+      color: #fff;
 		}
 
 		&__preview {
+      display: inline-block;
+      max-width: 100%;
+      padding-top: 10px;
 		}
+
+    .file__preview img{
+      max-width: 100%;
+    }
 }
 .checkbox {
 
 		&__input {
+      display: none;
 		}
 
 		&__label {
+      font-size: 16px;
+      @extend %rb-400;
+      line-height: 140%;
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      &::before{
+        content: "";
+        align-self: flex-start;
+        flex: 0 0 24px;
+        height: 24px;
+        background-color:rgba(132,153,183,.29);;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+      &::after{
+        content: '';
+        background: url('../images/icon/select-headerbottom.svg') 0 0 no-repeat;
+        position: absolute;
+        top: 10px;
+        left: 8px;
+        width: 16px;
+        height: 16px;
+        transform: scale(0);
+        transition: all 0.3s;
+      }
+      a{
+        color: $main-color;
+      }
 		}
 }
 
-
+.checkbox__input:checked + .checkbox__label::after{
+  transform: scale(1);
+}
 
 
 
