@@ -8,6 +8,30 @@
         e.preventDefault();
 
         let error = formValidate(form);
+
+        let formData = new formData(form);
+        formData.append('image', formImage.files[0]);
+
+        if (error === 0) {
+          form.classList.add('_sending');
+          let response = await fetch('sendmail.php', {
+            method: 'POST',
+            body: formData
+          });
+          if (response.ok) {
+            let result = await response.json();
+            alert(result.message);
+            formPreview.innerHTML = '';
+            form.reset();
+            form.classList.remove('_sending');
+          } else {
+            alert("Помилка");
+            form.classList.remove('_sending');
+          }
+        } else {
+          alert('Заповніть поле з зірочкою');
+        }
+        
       }
 
       function formValidate(form) {
@@ -33,6 +57,7 @@
             }
           }
         }
+        return error;
       } 
 
       function formAddError(input) {
@@ -48,7 +73,44 @@
       function emailTest(input) {
         return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
       }
+
+      // получае инпут файл в переменую
+      const formImage = document.getElementById('formImage');
+      // получаем див для превью в перемнную
+      const fontPreview = document.getElementById('formPreview');
+
+      // Спостерігаемо за змінами в инпут файлі
+      formImage.addEventListener('change', () => {
+        uploadFile(formImage.files[0]);
+      });
+
+      function uploadFile(file) {
+        //  перевірка типу файла
+        if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
+          alert('Дозволені тільки зображення.');
+          formImage.value = '';
+          return;
+        }
+        // перевіряємо розмір файлу (<2МБ.)
+        if (file.size > 2 *1024 *1024) {
+          alert('Файл повинен бути меншим за 2 МБ');
+        return;
+        }
+        var reader = new FileReader();
+    reader.onload = function(e) {
+      formPreview.innerHTML = `<img src="${e.target.result}" alt="Фото">`;
+    };
+    reader.onerror = function (e) {
+      alert('Помилка');
+     
+    };
+    
+ reader.readAsDataURL(file);
+      }
     });
+
+    
+
 
 $(function() {
     
