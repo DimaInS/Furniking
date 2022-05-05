@@ -117,6 +117,7 @@
     justify-content: space-between;
     align-items: center;
     min-height: 92px;
+    flex-wrap: wrap;
   }
 
   &__form {
@@ -228,6 +229,9 @@
     cursor: pointer;
   }
 
+  &__nav{
+    margin: 0 40px;
+  }
 
   &__nav-list {
     display: flex;
@@ -1349,6 +1353,7 @@ color: transparent;
 
 
 .contact {
+  padding: 100px 0;
 }
 .form {
   max-width: 550px;

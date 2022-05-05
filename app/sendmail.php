@@ -11,7 +11,7 @@ $mail ->setLanguage('ru', 'phpmailer/language/');
 $mail ->IsHTML(true);
 
 // Від кого лист
-$mail ->setForm('dmadam@gmail.com', 'незнайомець');
+$mail ->setFrom('dmadam@gmail.com', 'незнайомець');
 // Кому відправити
 $mail ->addAddress('dmadamchuk@gmail.com');
 // Тема Листа
@@ -26,19 +26,19 @@ if($_POST['hand'] == "left") {
 // Тіло Листа
 $body = '<h1>Зустрічайте листа</h1>';
 
-if(trim(!empty($POST['name']))){
+if(trim(!empty($_POST['name']))){
   $body.='<p><strong>Ім?я</strong>'$._POST['name'].'</p> ';
 }
-if(trim(!empty($POST['email']))){
+if(trim(!empty($_POST['email']))){
   $body.='<p><strong>E-mail</strong>'$._POST['email'].'</p> ';
 }
-if(trim(!empty($POST['hand']))){
+if(trim(!empty($_POST['hand']))){
   $body.='<p><strong>Рука</strong>'.$hand'</p> ';
 }
-if(trim(!empty($POST['age']))){
+if(trim(!empty($_POST['age']))){
   $body.='<p><strong>Вік</strong>'$._POST['age'].'</p> ';
 }
-if(trim(!empty($POST['message']))){
+if(trim(!empty($_POST['message']))){
   $body.='<p><strong>Повідомлення</strong>'$._POST['message'].'</p>';
 }
 

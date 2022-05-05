@@ -9,7 +9,7 @@
 
         let error = formValidate(form);
 
-        let formData = new formData(form);
+        let formData = new FormData(form);
         formData.append('image', formImage.files[0]);
 
         if (error === 0) {
@@ -77,7 +77,7 @@
       // получае инпут файл в переменую
       const formImage = document.getElementById('formImage');
       // получаем див для превью в перемнную
-      const fontPreview = document.getElementById('formPreview');
+      const formPreview = document.getElementById('formPreview');
 
       // Спостерігаемо за змінами в инпут файлі
       formImage.addEventListener('change', () => {
@@ -113,7 +113,9 @@
 
 
 $(function() {
-    
+    $('.menu__btn').on('click', function() {
+      $('.menu__list').toggleClass('menu__list--active');
+    })
 
     new Swiper('.reviews__swiper',{
       loop: true,
