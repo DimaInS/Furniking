@@ -113,6 +113,10 @@
 
 
 $(function() {
+    $('.header-bar__btn').on('click', function() {
+      $('.first__list').toggleClass('first__list--active');
+    })
+
     $('.menu__btn').on('click', function() {
       $('.menu__list').toggleClass('menu__list--active');
     })
