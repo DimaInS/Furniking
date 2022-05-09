@@ -113,6 +113,16 @@
 
 
 $(function() {
+
+  $('.footer__title').on('click', function(){ //сворачивает список под заголовком
+    $(this).next().slideToggle();
+    $(this).toggleClass('active');
+  });
+
+    $('.products-popular__filter-btn').on('click', function(){
+      $('.products__aside').slideToggle();
+    });
+
     $('.header-bar__btn').on('click', function() {
       $('.first__list').toggleClass('first__list--active');
     })
